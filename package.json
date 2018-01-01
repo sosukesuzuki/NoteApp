@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack --env production",
+    "start": "node_modules/.bin/webpack-dev-server",
+    "build": "node_modules/.bin/webpack --env production",
     "wipe": "rm -rf .git && git init && git add . && git commit -m 'initial commit'",
     "test": "echo 'FOR TRAVIS CI' && npm run build && rm bundle.css bundle.js && echo 'SUCCESS!'"
   },
