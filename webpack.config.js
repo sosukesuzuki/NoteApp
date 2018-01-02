@@ -1,27 +1,27 @@
-const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const MinifyPlugin = require('babel-minify-webpack-plugin');
-const webpack = require('webpack');
+const path = require('path')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MinifyPlugin = require('babel-minify-webpack-plugin')
+const webpack = require('webpack')
 
 const plugins = [
   new ExtractTextPlugin({
     filename: './bundle.css',
-    allChunks: true,
+    allChunks: true
   }),
-  new webpack.optimize.ModuleConcatenationPlugin(),
-];
+  new webpack.optimize.ModuleConcatenationPlugin()
+]
 
-module.exports = function webpackStuff(env) {
-  if (env === 'production') plugins.push(new MinifyPlugin());
+module.exports = function webpackStuff (env) {
+  if (env === 'production') plugins.push(new MinifyPlugin())
 
   return {
     entry: [
       './src/index.js',
-      './styles/app.css',
+      './styles/app.css'
     ],
     output: {
       filename: 'bundle.js',
-      path: path.resolve(__dirname, './'),
+      path: path.resolve(__dirname, './')
     },
     module: {
       rules: [{
@@ -29,20 +29,20 @@ module.exports = function webpackStuff(env) {
         loader: 'babel-loader',
         query: {
           presets: [
-            'es2015',
+            'es2015'
           ],
-          plugins: [],
+          plugins: []
         },
         include: [
-          path.resolve(__dirname, './'),
-        ],
+          path.resolve(__dirname, './')
+        ]
       }, {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          use: 'css-loader?importLoaders=1',
-        }),
-      }],
+          use: 'css-loader?importLoaders=1'
+        })
+      }]
     },
-    plugins,
-  };
-};
+    plugins
+  }
+}
