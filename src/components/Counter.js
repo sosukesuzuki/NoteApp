@@ -1,4 +1,5 @@
 import { h } from 'hyperapp'
+import s from './Counter.styl'
 
 /**
  * first object in the store is 'state' (an object - {})
@@ -7,7 +8,7 @@ import { h } from 'hyperapp'
  * 'num' from 'state' and 'add'/'sub' from 'actions'
  */
 export default ({ num }, { add, sub }) =>
-  <div class='counter'>
+  <div class={s.root}>
     <h1>hyperapp-one</h1>
     <p><em>With JSX and Webpack</em></p>
     <hr />

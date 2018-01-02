@@ -3,21 +3,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const MinifyPlugin = require('babel-minify-webpack-plugin')
 const webpack = require('webpack')
 
-const plugins = [
-  new ExtractTextPlugin({
-    filename: './bundle.css',
-    allChunks: true
-  }),
-  new webpack.optimize.ModuleConcatenationPlugin()
-]
-
 module.exports = function webpackStuff (env) {
-  if (env === 'production') plugins.push(new MinifyPlugin())
-
   return {
     entry: [
-      './src/index.js',
-      './styles/app.css'
+      './src/index.js'
     ],
     output: {
       filename: 'bundle.js',
@@ -37,12 +26,27 @@ module.exports = function webpackStuff (env) {
           path.resolve(__dirname, './')
         ]
       }, {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: 'css-loader?importLoaders=1'
-        })
+        test: /\.styl$/,
+        include: __dirname + '/src',
+        exclude: /node_modules/,
+        use: [{
+          loader: 'style-loader',
+          options: { sourceMap: true }
+        }, {
+          loader: 'css-loader',
+          options: {
+            localIdentName: '[name]-[local]',
+            modules: true,
+            sourceMap: true
+          }
+        }, {
+          loader: 'stylus-loader',
+          options: { sourceMap: true }
+        }]
       }]
     },
-    plugins
+    plugins: [
+      new MinifyPlugin()
+    ]
   }
 }
