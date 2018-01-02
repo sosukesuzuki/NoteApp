@@ -7,7 +7,9 @@
     "start": "node_modules/.bin/webpack-dev-server",
     "build": "node_modules/.bin/webpack --env production",
     "wipe": "rm -rf .git && git init && git add . && git commit -m 'initial commit'",
-    "test": "echo 'FOR TRAVIS CI' && npm run build && rm bundle.css bundle.js && echo 'SUCCESS!'"
+    "test": "echo 'FOR TRAVIS CI' && npm run build && rm bundle.css bundle.js && echo 'SUCCESS!'",
+    "lint": "node_modules/.bin/eslint src",
+    "fix": "node_modules/.bin/eslint --fix src"
   },
   "author": "Regis Boudinot (selfup)",
   "license": "MIT",
