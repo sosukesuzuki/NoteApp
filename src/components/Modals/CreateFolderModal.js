@@ -37,6 +37,8 @@ export default ({state, actions}) =>
       <p>create new folder</p>
       <input type='text' value={state.folderModalContent}
         oninput={(e) => handleUpdateFolderModalContent(e.target.value, actions.updateFolderModalInput)} />
-      <button onclick={() => handleCreateButtonClick(state.folderModalContent, actions.createFolder, actions.toggleCreateFolderModal)}>Create</button>
+      <button onclick={() => handleCreateButtonClick(state.folderModalContent, actions.createFolder, actions.toggleCreateFolderModal)}>
+        Create
+      </button>
     </div>
   </div>
