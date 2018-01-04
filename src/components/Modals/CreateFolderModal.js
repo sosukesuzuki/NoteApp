@@ -13,8 +13,13 @@ const acceptStyle = (cond) => {
   }
 }
 
-const handleCreateButtonClick = () => {
-  console.log('handleCreateButtonClick')
+const handleCreateButtonClick = (name, createFolder, toggle) => {
+  if (name !== '') {
+    toggle()
+    createFolder(name, 'black')
+  } else {
+    alert('please enter new folder name.')
+  }
 }
 
 const handleCloseButtonClick = (toggle) => {
@@ -32,6 +37,6 @@ export default ({state, actions}) =>
       <p>create new folder</p>
       <input type='text' value={state.folderModalContent}
         oninput={(e) => handleUpdateFolderModalContent(e.target.value, actions.updateFolderModalInput)} />
-      <button onclick={handleCreateButtonClick}>Create</button>
+      <button onclick={() => handleCreateButtonClick(state.folderModalContent, actions.createFolder, actions.toggleCreateFolderModal)}>Create</button>
     </div>
   </div>
