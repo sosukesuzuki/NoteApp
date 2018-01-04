@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: [
@@ -43,6 +44,10 @@ module.exports = {
     }, {
       test: /\.css$/,
       use: ['style-loader', 'css-loader']
+    }, {
+      test: /\.pug$/,
+      exclude: /node_modules/,
+      use: 'pug-loader'
     }]
   },
   plugins: [
@@ -53,6 +58,9 @@ module.exports = {
           import: ['~nib/lib/nib/index.styl']
         }
       }
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/index.pug'
     })
   ]
 }
