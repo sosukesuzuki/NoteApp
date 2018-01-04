@@ -10,6 +10,5 @@ import SideNav from './SideNav'
  */
 export default (state, actions) =>
   <div class={s.root}>
-    {console.log(state)}
     <SideNav folders={state.folders} />
   </div>
