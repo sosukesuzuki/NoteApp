@@ -1,13 +1,13 @@
 import { h } from 'hyperapp'
 import s from './AddFolderButton.styl'
 
-const handleOnClick = () => {
-  console.log('click')
+const handleOnClick = (toggle) => {
+  toggle()
 }
 
-export default () =>
+export default ({toggle}) =>
   <div class={s.root}>
-    <button onclick={handleOnClick}>
+    <button onclick={() => handleOnClick(toggle)}>
       <p>Add Folder</p>
     </button>
   </div>

@@ -3,9 +3,9 @@ import s from './index.styl'
 import FolderList from './components/FolderList'
 import AddFolderButton from './components/AddFolderButton'
 
-export default ({folders}) =>
+export default ({folders, actions}) =>
   <div class={s.root}>
-    <AddFolderButton />
+    <AddFolderButton toggle={actions.toggleCreateFolderModal} />
     <div class={s.folders}>
       <p>Folders</p>
     </div>

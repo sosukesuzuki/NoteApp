@@ -5,5 +5,6 @@ export default {
       color: 'red',
       id: 0
     }
-  ]
+  ],
+  isCreateFolderModalShow: false
 }

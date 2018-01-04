@@ -10,5 +10,5 @@ import SideNav from './SideNav'
  */
 export default (state, actions) =>
   <div class={s.root}>
-    <SideNav folders={state.folders} />
+    <SideNav folders={state.folders} actions={actions} />
   </div>
