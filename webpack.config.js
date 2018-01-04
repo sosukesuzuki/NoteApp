@@ -40,6 +40,9 @@ module.exports = {
         loader: 'stylus-loader',
         options: { sourceMap: true }
       }]
+    }, {
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader']
     }]
   },
   plugins: [
