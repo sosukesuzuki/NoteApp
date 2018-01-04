@@ -15,7 +15,6 @@ export default (state, actions) =>
       <SideNav folders={state.folders} actions={actions} />
     </div>
     <div>
-      <CreateFolderModal toggle={actions.toggleCreateFolderModal}
-        isCreateFolderModalShow={state.isCreateFolderModalShow} />
+      <CreateFolderModal actions={actions} state={state} />
     </div>
   </div>

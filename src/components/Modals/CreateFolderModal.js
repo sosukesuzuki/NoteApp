@@ -21,12 +21,17 @@ const handleCloseButtonClick = (toggle) => {
   toggle()
 }
 
-export default ({toggle, isCreateFolderModalShow}) =>
-  <div class={s.root} style={acceptStyle(isCreateFolderModalShow)}>
+const handleUpdateFolderModalContent = (text, update) => {
+  update(text)
+}
+
+export default ({state, actions}) =>
+  <div class={s.root} style={acceptStyle(state.isCreateFolderModalShow)}>
     <div class={s.modal}>
-      <button onclick={() => handleCloseButtonClick(toggle)}>Close</button>
+      <button onclick={() => handleCloseButtonClick(actions.toggleCreateFolderModal)}>Close</button>
       <p>create new folder</p>
-      <input type='text' />
+      <input type='text' value={state.folderModalContent}
+        oninput={(e) => handleUpdateFolderModalContent(e.target.value, actions.updateFolderModalInput)} />
       <button onclick={handleCreateButtonClick}>Create</button>
     </div>
   </div>
