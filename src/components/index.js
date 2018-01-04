@@ -1,5 +1,5 @@
 import { h } from 'hyperapp'
-import s from './Counter.styl'
+import s from './index.styl'
 
 /**
  * first object in the store is 'state' (an object - {})
