@@ -8,7 +8,7 @@ module.exports = {
   ],
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, './')
+    path: path.resolve(__dirname, './dist')
   },
   module: {
     rules: [{
@@ -46,10 +46,13 @@ module.exports = {
       use: ['style-loader', 'css-loader']
     }, {
       test: /\.pug$/,
-      exclude: /node_modules/,
       use: 'pug-loader'
     }]
   },
+  devServer: {
+    contentBase: './dist'
+  },
+  devtool: 'inline-source-map',
   plugins: [
     new webpack.LoaderOptionsPlugin({
       options: {
