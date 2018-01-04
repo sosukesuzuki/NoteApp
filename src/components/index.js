@@ -1,5 +1,6 @@
 import { h } from 'hyperapp'
 import s from './index.styl'
+import SideNav from './SideNav'
 
 /**
  * first object in the store is 'state' (an object - {})
@@ -9,23 +10,5 @@ import s from './index.styl'
  */
 export default (state, actions) =>
   <div class={s.root}>
-    <h1>hyperapp-one</h1>
-    <p><em>With JSX and Webpack</em></p>
-    <hr />
-    <section>
-      <button
-        class='sub'
-        onclick={actions.sub}
-        disabled={state.num < 1}
-      >
-        -
-      </button>
-      <h1 class='count'>{state.num}</h1>
-      <button
-        class='add'
-        onclick={actions.add}
-      >
-        +
-      </button>
-    </section>
+    <SideNav />
   </div>
