@@ -1,5 +1,4 @@
 const path = require('path')
-const MinifyPlugin = require('babel-minify-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = {
@@ -44,6 +43,13 @@ module.exports = {
     }]
   },
   plugins: [
-    new MinifyPlugin()
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        stylus: {
+          use: [require('nib')()],
+          import: ['~nib/lib/nib/index.styl']
+        }
+      }
+    })
   ]
 }
