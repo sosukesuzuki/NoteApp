@@ -1,3 +1,9 @@
 export default {
-  num: 0
+  folders: [
+    {
+      name: 'default',
+      color: 'red',
+      id: 0
+    }
+  ]
 }

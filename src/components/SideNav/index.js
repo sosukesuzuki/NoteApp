@@ -1,7 +1,10 @@
 import { h } from 'hyperapp'
 import s from './index.styl'
+import FolderList from './components/FolderList'
+import AddFolderButton from './components/AddFolderButton'
 
-export default () =>
+export default ({folders}) =>
   <div class={s.root}>
-    <p>SideNav</p>
+    <AddFolderButton />
+    <FolderList folders={folders} />
   </div>
