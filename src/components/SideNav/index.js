@@ -9,5 +9,5 @@ export default ({folders, folderId, actions}) =>
       <p>Folders</p>
       <AddFolderButton toggle={actions.toggleCreateFolderModal} />
     </div>
-    <FolderList folderId={folderId} folders={folders} />
+    <FolderList folderId={folderId} folders={folders} setFolderId={actions.setFolderId} />
   </div>
