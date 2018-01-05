@@ -1,11 +1,42 @@
 .root
-  position absolute
-  height 100vh
-  width 100vw
-  background-color alpha(black, 90%)
-  .modal
-    margin-right auto
-    margin-left auto
-    width 500px
-    height 300px
+  absolute top bottom left right
+  margin auto
+  height 300px
+  width 500px
+  background-color #f9f9f9
+  border-radius 0.2em
+  text-align center
+  .title
+    position relative
+    margin 0
+    top 10px
+    font-size 30px
+    font-weight 900
+    color black
+  .closebutton
+    position relative
+    left 230px
+    top 10px
+    outline none
+    font-weight 200
+    border none
+    color $sidenav-text-color
+    background-color transparent
+    cursor pointer
+  .createbutton
+    position relative
+    top 160px
+    left 170px
+    outline none
+    border none
     background-color white
+    color $sidenav-text-color
+    height 40px
+    width 100px
+    cursor pointer
+  .input
+    width 90%
+    position relative
+    top 80px
+    outline none
+    border 1px solid #6aa5e9
