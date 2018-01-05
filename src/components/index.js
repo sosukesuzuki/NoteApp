@@ -12,7 +12,7 @@ import CreateFolderModal from './Modals/CreateFolderModal'
 export default (state, actions) =>
   <div class={s.root}>
     <div>
-      <SideNav folders={state.folders} actions={actions} />
+      <SideNav folders={state.folders} folderId={state.folderId} actions={actions} />
     </div>
     <div>
       <CreateFolderModal actions={actions} state={state} />

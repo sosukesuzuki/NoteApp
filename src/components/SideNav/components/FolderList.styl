@@ -1,7 +1,6 @@
 .root
   .folder
-    border-top 1px solid $border-color
-    border-bottom 1px solid $border-color
+    border none
     padding 10px 0 10px 0
     width 100%
     text-align left
@@ -14,4 +13,17 @@
     &:hover
       background-color $sidenav-hover-color
     &:active
+      background-color lighten($sidenav-hover-color, 10%)
+  .activefolder
+    border none
+    padding 10px 0 10px 0
+    width 100%
+    text-align left
+    outline none
+    background-color lighten($sidenav-color, 10%)
+    color $sidenav-text-color
+    i
+      padding-right 10px
+      padding-left 20px
+    &:hover
       background-color lighten($sidenav-hover-color, 10%)

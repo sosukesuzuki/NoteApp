@@ -7,5 +7,6 @@ export default {
     }
   ],
   isCreateFolderModalShow: false,
-  folderModalContent: ''
+  folderModalContent: '',
+  folderId: 0
 }
