@@ -8,6 +8,6 @@ const handleOnClick = (toggle) => {
 export default ({toggle}) =>
   <div class={s.root}>
     <button onclick={() => handleOnClick(toggle)}>
-      <p>Add Folder</p>
+      <i class='fa fa-plus' aria-hidder />
     </button>
   </div>

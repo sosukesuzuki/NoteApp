@@ -47,6 +47,9 @@ module.exports = {
     }, {
       test: /\.pug$/,
       use: 'pug-loader'
+    }, {
+      test: /\.(jpg|png|svg|gif|ttf|woff2|woff|eot)$/,
+      loaders: 'url-loader'
     }]
   },
   devServer: {

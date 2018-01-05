@@ -5,9 +5,9 @@ import AddFolderButton from './components/AddFolderButton'
 
 export default ({folders, actions}) =>
   <div class={s.root}>
-    <AddFolderButton toggle={actions.toggleCreateFolderModal} />
     <div class={s.folders}>
       <p>Folders</p>
+      <AddFolderButton toggle={actions.toggleCreateFolderModal} />
     </div>
     <FolderList folders={folders} />
   </div>

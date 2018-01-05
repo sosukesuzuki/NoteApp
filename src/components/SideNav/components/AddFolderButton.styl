@@ -1,11 +1,14 @@
 .root
+  position absolute
+  top 8px
+  left 180px
   button
     outline none
-    width 100%
     border none
+    border-radius 50%
     background-color $sidenav-color
     color $sidenav-text-color
+    background-color $sidenav-hover-color
+    padding 10px
     &:hover
-      background-color $sidenav-hover-color
-    &:active
-      font-weight 900
+      background-color lighten($sidenav-hover-color, 20%)
