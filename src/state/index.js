@@ -8,5 +8,13 @@ export default {
   ],
   isCreateFolderModalShow: false,
   folderModalContent: '',
-  folderId: 0
+  folderId: 0,
+  notes: [
+    {
+      title: 'default note',
+      content: '# default note',
+      folderId: 0,
+      noteId: 0
+    }
+  ]
 }

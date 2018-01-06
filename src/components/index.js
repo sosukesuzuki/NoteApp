@@ -1,6 +1,7 @@
 import { h } from 'hyperapp'
 import s from './index.styl'
 import SideNav from './SideNav'
+import NoteList from './NoteList'
 import CreateFolderModal from './Modals/CreateFolderModal'
 
 /**
@@ -11,8 +12,9 @@ import CreateFolderModal from './Modals/CreateFolderModal'
  */
 export default (state, actions) =>
   <div class={s.root}>
-    <div>
+    <div class={s.main}>
       <SideNav folders={state.folders} folderId={state.folderId} actions={actions} />
+      <NoteList state={state} actions={actions} />
     </div>
     <div>
       <CreateFolderModal actions={actions} state={state} />
