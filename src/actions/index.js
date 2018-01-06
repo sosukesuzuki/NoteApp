@@ -20,5 +20,6 @@ export default {
       id: newState.notes[newState.notes.length - 1].id + 1
     })
     return {notes: newState.notes}
-  }
+  },
+  setNoteId: (noteId) => (state) => ({noteId})
 }

@@ -14,7 +14,8 @@ export default {
       title: 'default note',
       content: '# default note',
       folderId: 0,
-      noteId: 0
+      id: 0
     }
-  ]
+  ],
+  noteId: 0
 }

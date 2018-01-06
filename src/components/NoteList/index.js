@@ -15,6 +15,9 @@ export default ({ state, actions }) =>
     </div>
     <div class={s.notelist}>
       {console.log(state.notes)}
-      <NoteList notes={state.notes} folderId={state.folderId} />
+      <NoteList notes={state.notes}
+        folderId={state.folderId}
+        setNoteId={actions.setNoteId}
+        noteId={state.noteId} />
     </div>
   </div>
