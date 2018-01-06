@@ -7,5 +7,6 @@ const handleOnClick = () => {
 
 export default ({ note }) =>
   <button onclick={handleOnClick} class={s.root}>
+    <i class='fa fa-sticky-note-o' aria-hidden />
     {note.title}
   </button>

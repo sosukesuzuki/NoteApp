@@ -10,7 +10,7 @@ export default ({ state, actions }) =>
     <div class={s.header}>
       <button onclick={() => handleOnClick(state.folderId, actions.createNote)}
         class={s.createbutton}>
-        create
+        <i class='fa fa-pencil-square-o' aria-hidden />
       </button>
     </div>
     <div class={s.notelist}>
