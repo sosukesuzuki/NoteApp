@@ -33,7 +33,7 @@ module.exports = {
       }, {
         loader: 'css-loader',
         options: {
-          localIdentName: '[name]-[local]',
+          localIdentName: '[sha512:hash:base32]-[name]-[local]',
           modules: true,
           sourceMap: true
         }
