@@ -17,5 +17,6 @@ export default {
       id: 0
     }
   ],
-  noteId: 0
+  noteId: 0,
+  mode: 'EDITOR'
 }

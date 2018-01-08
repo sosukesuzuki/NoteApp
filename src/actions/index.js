@@ -21,5 +21,15 @@ export default {
     })
     return {notes: newState.notes}
   },
-  setNoteId: (noteId) => (state) => ({noteId})
+  setNoteId: (noteId) => (state) => ({noteId}),
+  toggleMode: () => (state) => {
+    if (state.mode === 'EDITOR') {
+      return {mode: 'PREVIEW'}
+    } else if (state.mode === 'PREVIEW') {
+      return {mode: 'EDITOR'}
+    } else {
+      console.log('invalid mode, mode change to PREVIEW')
+      return {mode: 'PREVIEW'}
+    }
+  }
 }
