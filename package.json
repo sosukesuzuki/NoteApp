@@ -12,6 +12,7 @@
   "author": "sosukesuzuki(aosukeke@gmail.com)",
   "license": "MIT",
   "dependencies": {
+    "codemirror": "^5.33.0",
     "font-awesome": "^4.7.0",
     "hyperapp": "^1.0.0",
     "normalize.css": "^7.0.0"
