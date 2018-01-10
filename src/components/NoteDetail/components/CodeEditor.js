@@ -1,5 +1,6 @@
 import { h } from 'hyperapp'
 import codemirror from 'codemirror'
+import getCurrentNoteContent from '../../../lib/getCurrentNoteContent'
 require('codemirror/lib/codemirror.css')
 require('codemirror/mode/markdown/markdown')
 
@@ -10,14 +11,8 @@ const handleOnCreate = (e, options, onChange, setCodeMirror) => {
 }
 
 const handleOnUpdate = (e, oldProps, notes, noteId, cmInstance) => {
-  if (noteId === oldProps.noteId) return
+  if (noteId === oldProps.noteId || cmInstance === null) return
   cmInstance.setValue(getCurrentNoteContent(notes, noteId))
-}
-
-const getCurrentNoteContent = (notes, noteId) => {
-  return notes.filter(note => {
-    return note.id === noteId
-  })[0].content
 }
 
 export default ({notes, noteId, options, onChange, setCodeMirror, cmInstance}) => {
@@ -26,7 +21,7 @@ export default ({notes, noteId, options, onChange, setCodeMirror, cmInstance}) =
       onupdate={(e, oldProps) => handleOnUpdate(e, oldProps, notes, noteId, cmInstance)}>
       <textarea
         defaultValue={getCurrentNoteContent(notes, noteId)}
-        oncreate={e => handleOnCreate(e, options, onChange, setCodeMirror)} />
+        oncreate={e => handleOnCreate(e, options, onChange, setCodeMirror, cmInstance)} />
     </div>
   )
 }

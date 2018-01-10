@@ -15,7 +15,10 @@
     "codemirror": "^5.33.0",
     "font-awesome": "^4.7.0",
     "hyperapp": "^1.0.0",
-    "normalize.css": "^7.0.0"
+    "normalize.css": "^7.0.0",
+    "remark": "^8.0.0",
+    "remark-html": "^7.0.0",
+    "remark-preset-lint-recommended": "^3.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
