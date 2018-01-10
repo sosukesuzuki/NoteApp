@@ -15,7 +15,7 @@ export default {
     const newState = Object.assign({}, state)
     newState.notes.push({
       title: 'Untitled',
-      contnet: '',
+      content: '',
       folderId,
       id: newState.notes[newState.notes.length - 1].id + 1
     })
@@ -31,5 +31,18 @@ export default {
       console.log('invalid mode, mode change to PREVIEW')
       return {mode: 'PREVIEW'}
     }
-  }
+  },
+  updateNoteContent: (value) => (state) => {
+    const notes = Object.assign({}, state).notes
+    const newNotes = notes.map(note => {
+      if (state.noteId === note.id) {
+        note.content = value
+      }
+      return note
+    })
+    return {
+      notes: newNotes
+    }
+  },
+  setCodeMirror: (cm) => (state) => ({cmInstance: cm})
 }

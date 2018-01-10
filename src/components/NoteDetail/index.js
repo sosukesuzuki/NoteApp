@@ -13,7 +13,7 @@ export default ({state, actions}) =>
     oncontextmenu={(e) => handleOnContextMenu(e, actions.toggleMode)}>
     {
       state.mode === 'EDITOR'
-        ? <MarkdownEditor />
+        ? <MarkdownEditor {...state} {...actions} />
         : <MarkdownPreview />
     }
   </div>

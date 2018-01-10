@@ -7,7 +7,6 @@ const handleOnClick = (setFolderId, folderId) => {
 
 export default ({folders, folderId, setFolderId}) =>
   <div class={s.root}>
-    {console.log(folders)}
     {folders.map((folder) => {
       return <button class={folderId === folder.id ? s.activefolder : s.folder}
         onclick={() => handleOnClick(setFolderId, folder.id)}>

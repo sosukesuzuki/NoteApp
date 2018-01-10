@@ -8,14 +8,17 @@ const options = {
   mode: 'markdown'
 }
 
-const handleOnChange = (e) => {
-  console.log(e)
+const handleOnChange = (e, updateNoteContent) => {
+  updateNoteContent(e)
 }
 
-export default ({value}) =>
+export default ({notes, noteId, updateNoteContent, setCodeMirror, cmInstance}) =>
   <div class={s.root}>
     <CodeEditor class={s.editor}
-      value={value}
+      notes={notes}
+      noteId={noteId}
       options={options}
-      onChange={handleOnChange} />
+      setCodeMirror={setCodeMirror}
+      cmInstance={cmInstance}
+      onChange={(e) => handleOnChange(e, updateNoteContent)} />
   </div>

@@ -18,5 +18,6 @@ export default {
     }
   ],
   noteId: 0,
-  mode: 'EDITOR'
+  mode: 'EDITOR',
+  cmInstance: null
 }
