@@ -17,7 +17,7 @@ export default ({state, actions}) =>
   <div class={s.notedetail_root}
     oncontextmenu={(e) => handleOnContextMenu(e, state.mode, actions.toggleMode)}>
     <MarkdownPreview class={state.mode === 'PREVIEW' ? s.md_active : s.md_non_active}
-      value={getCurrentNoteContent(state.notes, state.noteId)} />
+      value={getCurrentNoteContent(state.notes, state.noteId)} {...state} />
     <MarkdownEditor class={state.mode === 'EDITOR' ? s.md_active : s.md_non_active}
       {...state} {...actions} />
   </div>

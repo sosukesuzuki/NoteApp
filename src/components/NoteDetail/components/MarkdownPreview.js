@@ -9,6 +9,10 @@ const dangerouslySetInnerHTML = (e, html) => {
   e.innerHTML = html
 }
 
+const handleUpdate = (e, oldProps, value) => {
+  dangerouslySetInnerHTML(e, md2html(value))
+}
+
 const md2html = (md) => {
   let htmlText = ''
   remark().use(html).use(recommended)
@@ -22,7 +26,10 @@ const md2html = (md) => {
   return htmlText
 }
 
-export default ({value}) =>
+export default ({value, noteId}) =>
   <div class={s.root}>
-    <div oncreate={e => dangerouslySetInnerHTML(e, md2html(value))} />
+    <div noteId={noteId}
+      value={value}
+      onupdate={(e, oldProps) => handleUpdate(e, oldProps, value)}
+      oncreate={e => dangerouslySetInnerHTML(e, md2html(value))} />
   </div>
