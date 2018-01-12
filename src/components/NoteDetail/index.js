@@ -37,7 +37,8 @@ export default ({state, actions}) =>
         : s.nonactive_main}>
       <NoNote
         folderId={state.folderId}
-        createNewNote={state.createNewNote}
+        createNote={actions.createNote}
+        cmInstance={state.cmInstance}
         folderName={getCurrentFolderName(state.folders, state.folderId)} />
     </div>
   </div>
