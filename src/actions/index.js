@@ -1,3 +1,5 @@
+import findTitle from '../lib/findTitle'
+
 export default {
   toggleCreateFolderModal: () => (state) => ({isCreateFolderModalShow: !state.isCreateFolderModalShow}),
   updateFolderModalInput: (text) => (state) => ({folderModalContent: text}),
@@ -37,6 +39,8 @@ export default {
     const newNotes = notes.map(note => {
       if (state.noteId === note.id) {
         note.content = value
+        const newTitle = findTitle(value)
+        note.title = newTitle || 'Untitled'
       }
       return note
     })
