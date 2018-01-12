@@ -1,9 +1,18 @@
 import { h } from 'hyperapp'
 import codemirror from 'codemirror'
 import getCurrentNoteContent from '../../../lib/getCurrentNoteContent'
-require('codemirror/lib/codemirror.css')
-require('codemirror/mode/markdown/markdown')
-require('codemirror/addon/display/autorefresh')
+import 'codemirror/lib/codemirror.css'
+import 'codemirror/mode/markdown/markdown'
+import 'codemirror/addon/edit/continuelist'
+
+const options = {
+  theme: 'default',
+  lineNumbers: true,
+  mode: 'markdown',
+  extraKeys: {
+    'Enter': 'newlineAndIndentContinueMarkdownList'
+  }
+}
 
 const handleOnCreate = (e, options, onChange, setCodeMirror) => {
   const cm = codemirror.fromTextArea(e, options)
@@ -14,9 +23,10 @@ const handleOnCreate = (e, options, onChange, setCodeMirror) => {
 const handleOnUpdate = (e, oldProps, notes, noteId, cmInstance) => {
   if (noteId === oldProps.noteId || cmInstance === null) return
   cmInstance.setValue(getCurrentNoteContent(notes, noteId))
+  cmInstance.focus()
 }
 
-export default ({notes, noteId, options, onChange, setCodeMirror, cmInstance}) => {
+export default ({notes, noteId, onChange, setCodeMirror, cmInstance}) => {
   return (
     <div noteId={noteId}
       onupdate={(e, oldProps) => handleOnUpdate(e, oldProps, notes, noteId, cmInstance)}>
