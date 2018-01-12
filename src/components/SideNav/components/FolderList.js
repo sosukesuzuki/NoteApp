@@ -1,15 +1,25 @@
 import { h } from 'hyperapp'
 import s from './FolderList.styl'
 
-const handleOnClick = (setFolderId, folderId) => {
+const handleOnClick = (setFolderId, folderId, setNoteId, notes, setFolderHasNote) => {
   setFolderId(folderId)
+  const currentNotes = notes.filter(note => {
+    return note.folderId === folderId
+  })
+  const headNote = currentNotes[0] || null // -1 means folder has no note
+  if (headNote !== null) {
+    setNoteId(headNote.id)
+    setFolderHasNote(true)
+  } else {
+    setFolderHasNote(false)
+  }
 }
 
-export default ({folders, folderId, setFolderId}) =>
+export default ({folders, folderId, setFolderId, setNoteId, notes, setFolderHasNote}) =>
   <div class={s.root}>
     {folders.map((folder) => {
       return <button class={folderId === folder.id ? s.activefolder : s.folder}
-        onclick={() => handleOnClick(setFolderId, folder.id)}>
+        onclick={() => handleOnClick(setFolderId, folder.id, setNoteId, notes, setFolderHasNote)}>
         <i class={folderId === folder.id ? 'fa fa-folder-open-o' : 'fa fa-folder-o'}
           aria-hidden
           style={{color: folder.color}} />

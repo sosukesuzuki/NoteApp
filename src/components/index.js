@@ -14,7 +14,7 @@ import CreateFolderModal from './Modals/CreateFolderModal'
 export default (state, actions) =>
   <div class={s.root}>
     <div class={s.main}>
-      <SideNav folders={state.folders} folderId={state.folderId} actions={actions} />
+      <SideNav {...state} {...actions} />
       <NoteList state={state} actions={actions} />
       <NoteDetail state={state} actions={actions} />
     </div>
