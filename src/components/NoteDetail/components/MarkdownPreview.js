@@ -5,7 +5,6 @@ import html from 'remark-html'
 import recommended from 'remark-preset-lint-recommended'
 
 const dangerouslySetInnerHTML = (e, html) => {
-  console.log(html)
   e.innerHTML = html
 }
 

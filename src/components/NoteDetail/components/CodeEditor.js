@@ -3,6 +3,7 @@ import codemirror from 'codemirror'
 import getCurrentNoteContent from '../../../lib/getCurrentNoteContent'
 require('codemirror/lib/codemirror.css')
 require('codemirror/mode/markdown/markdown')
+require('codemirror/addon/display/autorefresh')
 
 const handleOnCreate = (e, options, onChange, setCodeMirror) => {
   const cm = codemirror.fromTextArea(e, options)

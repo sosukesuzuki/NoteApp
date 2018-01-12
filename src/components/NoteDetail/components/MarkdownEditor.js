@@ -5,7 +5,8 @@ import CodeEditor from './CodeEditor'
 const options = {
   theme: 'default',
   lineNumbers: true,
-  mode: 'markdown'
+  mode: 'markdown',
+  autoRefresh: true
 }
 
 const handleOnChange = (e, updateNoteContent) => {
