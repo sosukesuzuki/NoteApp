@@ -19,26 +19,31 @@ const handleOnContextMenu = (e, mode, toggleMode, cmInstance) => {
   toggleMode()
 }
 
-export default ({state, actions}) =>
+export default ({mode, toggleMode, cmInstance, notes, folderId, noteId, createNote, folders, updateNoteContent, setCodeMirror}) =>
   <div class={s.notedetail_root}
-    oncontextmenu={(e) => handleOnContextMenu(e, state.mode, actions.toggleMode, state.cmInstance)}>
+    oncontextmenu={(e) => handleOnContextMenu(e, mode, toggleMode, cmInstance)}>
     <div
-      class={getCurrentNotes(state.notes, state.folderId).length !== 0
+      class={getCurrentNotes(notes, folderId).length !== 0
         ? s.main
         : s.nonactive_main}>
       <MarkdownPreview
-        value={getCurrentNoteContent(state.notes, state.noteId)} {...state} />
-      <MarkdownEditor
-        {...state} {...actions} />
+        value={getCurrentNoteContent(notes, noteId)}
+        noteId={noteId} />
+      <MarkdownEditor 
+        notes={notes}
+        noteId={noteId}
+        updateNoteContent={updateNoteContent}
+        setCodeMirror={setCodeMirror}
+        cmInstance={cmInstance} />
     </div>
     <div
-      class={getCurrentNotes(state.notes, state.folderId).length === 0
+      class={getCurrentNotes(notes, folderId).length === 0
         ? s.main
         : s.nonactive_main}>
       <NoNote
-        folderId={state.folderId}
-        createNote={actions.createNote}
-        cmInstance={state.cmInstance}
-        folderName={getCurrentFolderName(state.folders, state.folderId)} />
+        folderId={folderId}
+        createNote={createNote}
+        cmInstance={cmInstance}
+        folderName={getCurrentFolderName(folders, folderId)} />
     </div>
   </div>

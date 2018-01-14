@@ -9,8 +9,8 @@ export default (state, actions) =>
   <div class={s.root}>
     <div class={s.main}>
       <SideNav {...state} {...actions} />
-      <NoteList state={state} actions={actions} />
-      <NoteDetail state={state} actions={actions} />
+      <NoteList {...state} {...actions} />
+      <NoteDetail {...state} {...actions} />
     </div>
     <div>
       <CreateFolderModal actions={actions} state={state} />
