@@ -1,2 +1,193 @@
-.root
-  display block
+borderColor = #D0D0D0 // using
+highlightenBorderColor = darken(borderColor, 20%)
+invBorderColor = #404849
+brandBorderColor = #3FB399
+
+focusBorderColor = #369DCD
+
+buttonBorderColor = #4C4C4C
+
+lightButtonColor = #898989
+
+hoverBackgroundColor= transparentify(#444, 4%) // using
+
+inactiveTextColor = #888 // using
+textColor = #4D4D4D // using
+backgroundColor= white
+fontSize= 14px // using
+
+shadowColor= #C5C5C5
+
+invBackgroundColor = #4C4C4C
+invTextColor = white
+
+btnColor = #888
+btnHighlightenColor = #000
+
+brandColor = #2BAC8F
+
+popupShadow = 0 0 5px 0 #888
+
+
+tableHeadBgColor = white
+tableOddBgColor = #F9F9F9
+tableEvenBgColor = white
+
+facebookColor= #3b5998
+githubBtn= #201F1F
+
+// using
+successBackgroundColor= #E0F0D9
+successTextColor= #3E753F
+errorBackgroundColor= #F2DEDE
+errorTextColor= #A64444
+infoBackgroundColor= #D9EDF7
+infoTextColor= #34708E
+
+popupZIndex= 500
+
+.preview_root
+  .preview_main
+    background-color transparent
+    height 100%
+    div
+      overflow-y scroll
+    li
+      label.taskListItem
+        margin-left -2em
+    div.math-rendered
+      text-align center
+    .math-failed
+      background-color alpha(red, 0.1)
+      color darken(red, 15%)
+      padding 5px
+      margin 5px 0
+      border-radius 5px
+    sup
+      position relative
+      top -.4em
+      font-size 0.8em
+      vertical-align top
+    sub
+      position relative
+      bottom -.4em
+      font-size 0.8em
+      vertical-align top
+    a
+      color brandColor
+      text-decoration none
+      padding 5px
+      border-radius 5px
+      margin -5px
+      transition .1s
+      display inline-block
+      img
+        vertical-align sub
+      &:hover
+        color lighten(brandColor, 5%)
+        text-decoration underline
+        background-color alpha(#FFC95C, 0.3)
+      &:visited
+        color brandColor
+    hr
+      border-top none
+      border-bottom solid 1px borderColor
+      margin 15px 0
+    h1, h2, h3, h4, h5, h6
+      font-weight bold
+    h1
+      font-size 2.25em
+      padding-bottom 0.3em
+      line-height 1.2em
+      margin 1em 0 0.44em
+      &:first-child
+        margin-top 0
+    h2
+      font-size 1.75em
+      padding-bottom 0.3em
+      line-height 1.225em
+      margin 1em 0 0.57em
+      &:first-child
+        margin-top 0
+    h3
+      font-size 1.5em
+      line-height 1.43em
+      margin 1em 0 0.66em
+    h4
+      font-size 1.25em
+      line-height 1.4em
+      margin 1em 0 0.8em
+    h5
+      font-size 1em
+      line-height 1.4em
+      margin 1em 0 1em
+    h6
+      font-size 1em
+      line-height 1.4em
+      margin 1em 0 1em
+      color #777
+    p
+      line-height 1.6em
+      margin 0 0 1em
+      white-space pre-line
+    img
+      max-width 100%
+    strong, b
+      font-weight bold
+    em, i
+      font-style italic
+    s, del, strike
+      text-decoration line-through
+    u
+      text-decoration underline
+    blockquote
+      margin 0 0 1em
+      padding 0 25px
+    ul
+      list-style-type disc
+      li
+      display list-item
+        p
+          margin 0
+      &>li>ul, &>li>ol
+        margin 0
+      &>li>ul
+        list-style-type circle
+        &>li>ul
+          list-style-type square
+    ol
+      list-style-type decimal
+      li
+        display list-item
+        p
+          margin 0
+      &>li>ul, &>li>ol
+        margin 0
+    blockquote
+      border-left 4px solid #45B299
+      margin-left 0px
+      padding-left 20px
+    p pre
+      display inline-flex
+      margin-right 5px
+    a
+      font-size 13px
+      text-decoration none
+      color #2bac8f
+      padding 5px
+      border-radius 5px
+      margin -5px
+      transition .1s
+      &:hover
+        text-decoration underline
+        background-color alpha(#2bac8f, 0.1)
+    li pre code
+      display inline-table
+    pre code
+      display block
+      border 1px solid #d1d1d1
+      border-radius 0.5em
+      &::-webkit-scrollbar
+        display none
+    p img
+      width 100%

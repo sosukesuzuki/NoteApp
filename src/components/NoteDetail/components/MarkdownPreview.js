@@ -26,8 +26,9 @@ const md2html = (md) => {
 }
 
 export default ({value, noteId}) =>
-  <div class={s.root}>
-    <div noteId={noteId}
+  <div class={s.preview_root}>
+    <div class={s.preview_main}
+      noteId={noteId}
       value={value}
       onupdate={(e, oldProps) => handleUpdate(e, oldProps, value)}
       oncreate={e => dangerouslySetInnerHTML(e, md2html(value))} />
