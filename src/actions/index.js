@@ -1,8 +1,8 @@
 import findTitle from '../lib/findTitle'
 
 export default {
-  toggleCreateFolderModal: () => (state) => ({isCreateFolderModalShow: !state.isCreateFolderModalShow}),
-  updateFolderModalInput: (text) => (state) => ({folderModalContent: text}),
+  toggleCreateFolderModal: () => ({isCreateFolderModalShow}) => ({isCreateFolderModalShow: !isCreateFolderModalShow}),
+  updateFolderModalInput: (text) => () => ({folderModalContent: text}),
   createFolder: (name, color) => (state) => {
     const newState = Object.assign({}, state)
     newState.folders.push({
@@ -12,7 +12,7 @@ export default {
     })
     return {folders: newState.folders}
   },
-  setFolderId: (folderId) => (state) => ({folderId}),
+  setFolderId: (folderId) => () => ({folderId}),
   createNote: (folderId) => (state) => {
     const newState = Object.assign({}, state)
     newState.notes.push({
@@ -23,11 +23,11 @@ export default {
     })
     return {notes: newState.notes}
   },
-  setNoteId: (noteId) => (state) => ({noteId}),
-  toggleMode: () => (state) => {
-    if (state.mode === 'EDITOR') {
+  setNoteId: (noteId) => () => ({noteId}),
+  toggleMode: () => ({mode}) => {
+    if (mode === 'EDITOR') {
       return {mode: 'PREVIEW'}
-    } else if (state.mode === 'PREVIEW') {
+    } else if (mode === 'PREVIEW') {
       return {mode: 'EDITOR'}
     } else {
       console.log('invalid mode, mode change to PREVIEW')
@@ -48,5 +48,5 @@ export default {
       notes: newNotes
     }
   },
-  setCodeMirror: (cm) => (state) => ({cmInstance: cm})
+  setCodeMirror: (cm) => () => ({cmInstance: cm})
 }
