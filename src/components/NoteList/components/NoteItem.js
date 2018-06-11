@@ -3,6 +3,7 @@ import s from './NoteItem.styl'
 
 const handleOnClick = (noteId, setNoteId) => {
   setNoteId(noteId)
+  console.log('hoge')
 }
 
 export default ({ note, noteId, setNoteId }) =>
